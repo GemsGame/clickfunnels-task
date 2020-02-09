@@ -1,83 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!--<input type="radio" id="pid-1738523-0"
-         name="purchase[product_id]" value="1738523" 
-         data-product-label="Matcha Fuel Single Pouch (£17.95)" 
-         data-product-payment-type="onetime" data-product-amount="17.95"
-        data-product-currency-code="GBP" data-business-name=""
-        data-product-display-amount="£17.95" data-product-name="Matcha Fuel Single Pouch">
-
-
-
-        <div class="pull-left elOrderProductOptinProductName product-name" style="width: inherit;">Matcha Fuel 3 Pouches</div>
-        <div class="pull-right elOrderProductOptinPrice product-price">£44.95 (£14.95 each)</div>
-
-        -->
-
-    <input type="radio" id="lbl-01" name="purchase[product_id]" value="" />
-
-    <div class="clearfix elOrderProductOptinProducts">
-      <div
-        class="pull-left elOrderProductOptinProductName product-name"
-        style="width: inherit;"
-      ></div>
-      <div class="pull-right elOrderProductOptinPrice product-price">0</div>
-    </div>
-    <script>
+<script>
+      let radioButton;
       let orderList = document.querySelectorAll(
-        ".clearfix.elOrderProductOptinProducts"
-      );
+              ".clearfix.elOrderProductOptinProducts"
+            );
       let shipment = document.createElement("div");
-      shipment.className =
-        "pull-left elOrderProductOptinProductName product-name";
-      shipment.innerHTML = "--Product name---";
-      shipment.id = "--Product name---";
-      shipment.style = "width:inherit;";
+            shipment.className =
+              "pull-left elOrderProductOptinProductName product-name";
+            shipment.innerHTML = "Royal Mail 48 Hour Tracker";
+            shipment.id = "shipment-text";
+            shipment.style = "width:inherit;";
 
-      orderList[1].append(shipment);
+            orderList[4].append(shipment);
+            let shipmentPrice = document.createElement("div");
+            shipmentPrice.className =
+              "pull-right elOrderProductOptinPrice product-price";
+            shipmentPrice.innerHTML = "£2.80";
+            shipmentPrice.id = "shipment-price";
+            shipmentPrice.style = "width:inherit;";
 
+            shipment.after(shipmentPrice);
+            radioButton = "£2.80";
       document.addEventListener("click", () => {
-        if (event.target.id === "lbl-01") {
-          let list = document.querySelectorAll("#shipment-text");
-          if (list.length > 0) {
-            list.remove();
-          }
+        if (
+          event.target.id === "pid-2573990-0" ||
+          event.target.id === "pid-2573997-0"
+        ) {
+          setTimeout(() => {
+            let orderList = document.querySelectorAll(
+              ".clearfix.elOrderProductOptinProducts"
+            );
 
-          let first = document.getElementById("lbl-01");
-          //first.dataset.productAmount = Number(first.dataset.productAmount) + 2.80;
-          //window.document.cfpe.orderTotal = Number(first.dataset.productAmount) + 2.80;
+            let getText = document.querySelectorAll("#shipment-text");
+            let getPrice = document.querySelectorAll("#shipment-price");
 
-          let orderList = document.querySelectorAll(
-            ".clearfix.elOrderProductOptinProducts"
-          );
+            if (getPrice.length > 0) {
+              getText[0].remove();
+              getPrice[0].remove();
+            }
 
-          let shipment = document.createElement("div");
-          shipment.className =
-            "pull-left elOrderProductOptinProductName product-name";
-          shipment.innerHTML = "Royal Mail 48 Hour Tracker";
-          shipment.id = "shipment-text";
-          shipment.style = "width:inherit;";
+            let shipment = document.createElement("div");
+            shipment.className =
+              "pull-left elOrderProductOptinProductName product-name";
+            shipment.innerHTML = "Royal Mail 48 Hour Tracker";
+            shipment.id = "shipment-text";
+            shipment.style = "width:inherit;";
 
-          orderList[1].append(shipment);
+            orderList[4].append(shipment);
 
-          let shipmenttext = document.getElementById("shipment-text");
-          let shipmentPrice = document.createElement("div");
-          shipmentPrice.className =
-            "pull-right elOrderProductOptinPrice product-price";
-          shipmentPrice.innerHTML = "£2.80";
-          shipmentPrice.id = "shipment-price";
-          shipmentPrice.style = "width:inherit;";
+            let shipmentPrice = document.createElement("div");
+            shipmentPrice.className =
+              "pull-right elOrderProductOptinPrice product-price";
+            shipmentPrice.innerHTML = "£2.80";
+            shipmentPrice.id = "shipment-price";
+            shipmentPrice.style = "width:inherit;";
 
-          shipmenttext.after(shipmentPrice);
+            shipment.after(shipmentPrice);
+
+            radioButton = "£2.80";
+          }, 250);
+        }
+
+        if (event.target.id === "pid-2573998-0") {
+          setTimeout(() => {
+            let orderList = document.querySelectorAll(
+              ".clearfix.elOrderProductOptinProducts"
+            );
+
+            let getText = document.querySelectorAll("#shipment-text");
+            let getPrice = document.querySelectorAll("#shipment-price");
+
+            if (getPrice.length > 0) {
+              getText[0].remove();
+              getPrice[0].remove();
+            }
+
+            let shipment = document.createElement("div");
+            shipment.className =
+              "pull-left elOrderProductOptinProductName product-name";
+            shipment.innerHTML = "Royal Mail 48 Hour Tracker";
+            shipment.id = "shipment-text";
+            shipment.style = "width:inherit;";
+            orderList[4].append(shipment);
+
+            let shipmentPrice = document.createElement("div");
+            shipmentPrice.className =
+              "pull-right elOrderProductOptinPrice product-price";
+            shipmentPrice.innerHTML = "Free";
+            shipmentPrice.id = "shipment-price";
+            shipmentPrice.style = "width:inherit;";
+
+            shipment.after(shipmentPrice);
+
+            radioButton = "Free";
+          }, 250);
+        }
+        if (event.target.id === "bump-offer") {
+          setTimeout(() => {
+            let orderList = document.querySelectorAll(
+              ".clearfix.elOrderProductOptinProducts"
+            );
+
+            let getText = document.querySelectorAll("#shipment-text");
+            let getPrice = document.querySelectorAll("#shipment-price");
+
+            if (getPrice.length > 0) {
+              getText[0].remove();
+              getPrice[0].remove();
+            }
+
+            let shipment = document.createElement("div");
+            shipment.className =
+              "pull-left elOrderProductOptinProductName product-name";
+            shipment.innerHTML = "Royal Mail 48 Hour Tracker";
+            shipment.id = "shipment-text";
+            shipment.style = "width:inherit;";
+            orderList[4].append(shipment);
+
+            let shipmentPrice = document.createElement("div");
+            shipmentPrice.className =
+              "pull-right elOrderProductOptinPrice product-price";
+            shipmentPrice.innerHTML = radioButton;
+            shipmentPrice.id = "shipment-price";
+            shipmentPrice.style = "width:inherit;";
+
+            shipment.after(shipmentPrice);
+
+       
+
+          }, 250);
         }
       });
     </script>
-  </body>
-</html>
