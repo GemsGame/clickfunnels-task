@@ -1,5 +1,6 @@
 let globalCheckBox = false;
 let globalRadio;
+let totalOrderSumm;
 let globalShipmentPrice;
 let firstElementID = 'pid-2567235-0';
 let secondElementID = 'pid-2567330-0';
@@ -87,13 +88,13 @@ function setShipment(id, price, bump, offerID) {
     }
   }
   if (globalCheckBox === false) {
-    var first = document.getElementById(id);
-    var totalOrderSumm = Number(first.dataset.productAmount) + price;
+    let first = document.getElementById(id);
+    totalOrderSumm = Number(first.dataset.productAmount) + price;
   }
   if (globalCheckBox === true) {
-    var first = document.getElementById(id);
-    var offer = document.getElementById(offerID);
-    var totalOrderSumm =
+    let first = document.getElementById(id);
+    let offer = document.getElementById(offerID);
+    totalOrderSumm =
       Number(first.dataset.productAmount) +
       price +
       Number(offer.dataset.productAmount);
