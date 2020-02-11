@@ -115,7 +115,7 @@ function setShipment(id, price, bump, offerID) {
   shipment.innerHTML = 'Royal Mail 48 Hour Tracker';
   shipment.id = 'shipment-text';
   shipment.style = 'width:inherit;';
-  orderList[4].append(shipment);
+  orderList[orderList.length].append(shipment);
   let shipmentPrice = document.createElement('div');
   shipmentPrice.className =
     'pull-right elOrderProductOptinPrice product-price';
@@ -138,16 +138,8 @@ function setShipment(id, price, bump, offerID) {
     'pull-right elOrderProductOptinLabelPrice elOrderProductOptinLabelPrice2';
   orderTotalPrice.id = 'order-total-count';
   orderTotalPrice.innerHTML = `£${totalOrderSumm}`;
-  if (globalCheckBox === true) {
-    console.log(orderList);
-    orderList[5].after(itemsList);
-    itemsList.append(orderTotal);
-    itemsList.append(orderTotalPrice);
-  } else {
-    console.log(orderList);
-    orderList[4].after(itemsList);
-    itemsList.append(orderTotal);
-    itemsList.append(orderTotalPrice);
-  }
+  orderList[orderList.length].after(itemsList);
+  itemsList.append(orderTotal);
+  itemsList.append(orderTotalPrice);
 }
 
