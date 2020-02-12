@@ -6,9 +6,9 @@ let firstElementID = 'pid-2567235-0';
 let secondElementID = 'pid-2567330-0';
 let thirdElementID = 'pid-2567333-0';
 let secretOffer = 'lbl-01';
-let firstProductShippingPrice = 2.8;
-let secondProductShippingPrice = 2.8;
-let thirdProductShippingPrice = 0;
+let firstProductShippingPrice = 2.8.toFixed(2);
+let secondProductShippingPrice = 2.8.toFixed(2);
+let thirdProductShippingPrice = 0.0.toFixed(2);
 globalRadio = firstElementID;
 setShipment(firstElementID, firstProductShippingPrice);
 document.addEventListener('click', () => {
@@ -32,7 +32,7 @@ document.addEventListener('click', () => {
   if (event.target.id === secondElementID) {
     globalRadio = secondElementID;
     setTimeout(() => {
-      setShipment(secondElementID, 2.8);
+      setShipment(secondElementID, secondProductShippingPrice);
     }, 250);
   }
   if (event.target.id === secondElementID && globalCheckBox === true) {
